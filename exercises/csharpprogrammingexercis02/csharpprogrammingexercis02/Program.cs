@@ -48,7 +48,7 @@ namespace csharpprogrammingexercis02
             if (count <10)
                 return AvgTenInts(sum, count);
             else
-                return (sum / count);
+                return ((double)sum / count);
 
         }
 
@@ -69,7 +69,7 @@ namespace csharpprogrammingexercis02
             string input = Console.ReadLine();
             input = input.ToLower();
             if (input == "stop")
-                return sum/count;
+                return (double)sum/count;
             else
                 sum += int.Parse(input);
                 count++;
@@ -121,7 +121,7 @@ namespace csharpprogrammingexercis02
             if (count < numScores)
                 return AvgUnkInts(sum, count, numScores);
             else
-                return (sum / (numScores));
+                return ((double) sum / (numScores));
 
         }
         
