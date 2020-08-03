@@ -9,19 +9,20 @@ Answer the discussion questions in writing.
 
 1. What is the difference between deep copy and shallow copy?
 
-A deep copy is when an object is copied with all of its contents. A shallow copy is when only the referencees are copied.
+A deep copy is when an object is copied with all of its contents. A shallow copy is when only the references are copied.
 
 2. What is the value of a reference after you declare and initialize it?
 
-
+A named memory location on the heap.
 
 3. How do you declare a value type?
 
 Most primitive data types are value types like int, float, double, and char. 
+You declare the type, the name, and the value. 
 
 4. How do you declare a reference type?
 
-All objects are reference types and strings are as well.
+Use new keyword to create an instance of the object. 
 
 5. Does C# allow you to assign NULL to a value type?
 
@@ -31,14 +32,12 @@ int? = NULL;
 
 6. Can you assign a nullable value type to a non-nullable variable of the same type? Why or why not?
 
-With the '?' 
+No
 
 7. What is the difference between the stack and the heap?
 
 The stack is for methods and stores the methods loacl variables and the memory for its local variables. When an object is created the memory required to build the object 
 is always acquired from the heap.
-
-8. What does it mean when we say that all classes are specialized types?
 
 9. What does ref do?
 
@@ -52,7 +51,8 @@ an out parameter to a method, the method must assign a value to it before it fin
 
 11. Describe boxing and unboxing in your own words.
 
-Boxing is turning a referene type to a value type and a value type to a reference type. 
+Boxing is turning a value type and turn it into a reference type. You place the value type on the heap when boxing. Unboxing is when you take the value type off of the   
+heap and change it back into a reference type. 
 
 12. What does cast do?
 
