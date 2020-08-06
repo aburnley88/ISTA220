@@ -22,32 +22,18 @@ namespace ISTA220ProgrammingExercise05
             Mean(ArrayB);
             Mean(ArrayC);
 
-            Console.WriteLine("Part 4, sorting. ArrayC sorted is as follows: ");
 
-            Sort(ArrayC);
+            Console.WriteLine("Part 2: Write a method that reverses an array. Array A reversed:");
+            ReverseArray(ArrayA);
 
+            Console.WriteLine("Part 2: Write a method that reverses an array. Array B reversed:");
+            ReverseArray(ArrayB);
 
-
-            //{
-
-            //    //Console.WriteLine("\nArrayA: [{0}]", string.Join(", ", ArrayA));
-            //    //var temp = ArrayA[0];
-            //    //for (var i = 0; i < ArrayA.Length + 2; i++)
-            //    //{
-            //    //    ArrayA[i] = ArrayA[i + 1];
-            //    //}
-            //    //ArrayA[ArrayA.Length - 1] = temp;
-            //    //Console.WriteLine("\nAfter rotating array becomes: [{0}]", string.Join(", ", ArrayA));
-
-            //    //static void Rotate<T>(T[] source)
-            //    //{
-            //    //    var temp = source[source.Length - 1];
-            //    //    Array.Copy(source, 0, source, 1, source.Length - 1);
-            //    //    source[0] = temp;
-            //    //}
+            Console.WriteLine("Part 2: Write a method that reverses an array. Array C reversed:");
+            ReverseArray(ArrayC);
 
 
-            //}
+            
             int Sum(int[] arr)
             {
                 int sum = 0;
@@ -73,8 +59,74 @@ namespace ISTA220ProgrammingExercise05
                 }
                 return arr;
             }
+             int[] ReverseArray(int[] arr)
+            {               
+                var newArray = new int[arr.Length];
+                int count = 0;
 
+                for (int i = arr.Length-1; i >= 0; i--)
+                {
+                    newArray[count] = arr[i];
+                    count++;
+
+                    if (count == arr.Length)
+                    {
+                        Console.WriteLine("\nArray: [{0}]", string.Join(", ", newArray));
+                    }
+                }
+
+                return newArray;
+            }
+            int[] RotateArray(int[] arr, int index, bool isRight)
+            {
+        
+
+                if (index > arr.Length)
+                    throw new IndexOutOfRangeException();
+
+                var newArray = new int[arr.Length];
+                int count = 0;
+
+                if (isRight)
+                {
+                    //this loop starts at the index itself
+                    for (int i = index; i < arr.Length; i++)
+                    {
+                        newArray[count] = arr[i];
+                        count++;
+                    }
+                    //this loops starts at the beginning of the array
+                    for (int j = 0; j < index; j++)
+                    {
+                        newArray[count] = arr[j];
+                        count++;
+                    }
+                }
+                else
+                {
+                    if (index - 1 < 0)
+                        throw new IndexOutOfRangeException();
+
+                    for (int i = index - 1; i >= 0; i--)
+                    {
+                        newArray[count] = arr[i];
+                        count++;
+                    }
+                    for (int j = arr.Length - 1; j >= index; j--)
+                    {
+                        newArray[count] = arr[j];
+                        count++;
+                    }
+                }
+
+
+                return newArray;
+            }
         }
-
     }
+
+
 }
+
+   
+
