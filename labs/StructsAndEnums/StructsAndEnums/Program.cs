@@ -14,15 +14,15 @@ namespace StructsAndEnums
     {
         static void doWork()
         {
-            //Console.WriteLine("This is structs and enums");
-            //Month first = Month.December;
-            //Console.WriteLine(first);
-            //first++;
-            //Console.WriteLine(first);
-            //Console.WriteLine((int)first);
-            //Month last = Month.December;
-            //Console.WriteLine(last);
-            //Console.WriteLine((int)last);
+            Console.WriteLine("this is structs and enums");
+            Month first = Month.December;
+            Console.WriteLine(first);
+            first++;
+            Console.WriteLine(first);
+            Console.WriteLine((int)first);
+            Month last = Month.December;
+            Console.WriteLine(last);
+            Console.WriteLine((int)last);
 
             Date defaultDate = new Date();
             Console.WriteLine(defaultDate);
@@ -42,15 +42,9 @@ namespace StructsAndEnums
         }
 
         static void Main()
-        {
-            try
-            {
+        {          
                 doWork();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+      
         }
     }
 }
