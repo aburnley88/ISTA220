@@ -82,7 +82,7 @@ namespace ISTA220ProgrammingExercise05
                     }
                     if (isRight == false)
                     {
-                        if (k > 0)
+                        if (k > arr.Length)
                             throw new IndexOutOfRangeException();
                         int temp = arr[0];
                         for (j = 0; j < arr.Length - 1; j++)
