@@ -37,11 +37,11 @@ namespace ISTA220ProgrammingExercise05
             ReverseArray(ArrayC);
 
             Console.WriteLine("Part 3: Rotating arrays. ArrayA 2 to the right:");
-            Rotate(ArrayA, 2, false);
+            Rotate(ArrayA, 2, true);
             Console.WriteLine("Part 3: Rotating arrays. ArrayB 2 to the Left:");
-            Rotate(ArrayB, 2, true);
+            Rotate(ArrayB, 2, false);
             Console.WriteLine("Part 3: Rotating arrays. ArrayC 4 to the right:");
-            Rotate(ArrayC, 4, false);
+            Rotate(ArrayC, 4, true);
             
             
             Console.WriteLine("Part 4: Write a method that sorts an array. Array C sorted:");
@@ -66,9 +66,12 @@ namespace ISTA220ProgrammingExercise05
                     throw new IndexOutOfRangeException();
 
 
-                if (isRight)
+
+
+                while (k > 0)
                 {
-                    while (k > 0)
+
+                    if (isRight)
                     {
                         int temp = arr[arr.Length - 1];
                         for (j = arr.Length - 1; j > 0; j--)
@@ -77,11 +80,10 @@ namespace ISTA220ProgrammingExercise05
                         }
                         arr[j] = temp;
                         k--;
-
-
                     }
-                    if (isRight == false)
+                    else
                     {
+
                         if (k > arr.Length)
                             throw new IndexOutOfRangeException();
                         int temp = arr[0];
@@ -91,10 +93,13 @@ namespace ISTA220ProgrammingExercise05
                         }
                         arr[j] = temp;
                         k--;
-
                     }
 
                 }
+
+                    
+
+                
                     Console.WriteLine("\nArray: [{0}]\n", string.Join(", ", arr));
                 return arr;
             } 
