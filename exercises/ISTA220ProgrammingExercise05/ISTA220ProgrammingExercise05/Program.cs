@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
@@ -35,12 +36,21 @@ namespace ISTA220ProgrammingExercise05
             Console.WriteLine("Part 2:  Array C reversed:");
             ReverseArray(ArrayC);
 
+            Console.WriteLine("Part 3: Rotating arrays. ArrayA 2 to the right:");
+            Rotate(ArrayA, 2, false);
+            Console.WriteLine("Part 3: Rotating arrays. ArrayB 2 to the Left:");
+            Rotate(ArrayB, 2, true);
+            Console.WriteLine("Part 3: Rotating arrays. ArrayC 4 to the right:");
+            Rotate(ArrayC, 4, false);
+            
+            
             Console.WriteLine("Part 4: Write a method that sorts an array. Array C sorted:");
             Sort(ArrayC);
 
            
             int Sum(int[] arr)
             {
+               
                 int sum = 0;
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -48,6 +58,46 @@ namespace ISTA220ProgrammingExercise05
                 }              
                 return sum;
             }
+            int[] Rotate(int[] arr, int k, bool isRight)
+            {
+                int j = 0;
+
+                if (k > arr.Length)
+                    throw new IndexOutOfRangeException();
+
+
+                if (isRight)
+                {
+                    while (k > 0)
+                    {
+                        int temp = arr[arr.Length - 1];
+                        for (j = arr.Length - 1; j > 0; j--)
+                        {
+                            arr[j] = arr[j - 1];
+                        }
+                        arr[j] = temp;
+                        k--;
+
+
+                    }
+                    if (isRight == false)
+                    {
+                        if (k > 0)
+                            throw new IndexOutOfRangeException();
+                        int temp = arr[0];
+                        for (j = 0; j < arr.Length - 1; j++)
+                        {
+                            arr[j] = arr[j + 1];
+                        }
+                        arr[j] = temp;
+                        k--;
+
+                    }
+
+                }
+                    Console.WriteLine("\nArray: [{0}]\n", string.Join(", ", arr));
+                return arr;
+            } 
             double Mean(int[] arr)
             {
                 double avg = Sum(arr) / arr.Length;
