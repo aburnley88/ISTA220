@@ -46,7 +46,7 @@ namespace ISTA220ProgrammingExercise05
             
             Console.WriteLine("Part 4: Write a method that sorts an array. Array C sorted:");
             Sort(ArrayC);
-
+            Sort(ArrayA);
            
             int Sum(int[] arr)
             {
@@ -152,9 +152,7 @@ namespace ISTA220ProgrammingExercise05
 
                 return newArray;
             }
-
-           
-                
+              
         }
     }
 
