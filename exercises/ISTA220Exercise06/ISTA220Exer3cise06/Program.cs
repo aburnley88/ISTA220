@@ -274,21 +274,6 @@ namespace ISTA220Exer3cise06
             Thread.Sleep(2000);
 
             Console.WriteLine("==========================================MISSION COMPLETE===========================================");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+       }
     }
 }

@@ -27,13 +27,12 @@ You define a method in an interface with the return type, method name, parameter
 
 **5. Can you instantiate an object through an interface? Why or why not?**  
 
-No you cannot because then evey class that uses the interface would have to instantiate the object, and interfaces are only for methods.
+Yes you can.
 
 
 **6. Using the new keyword, can you declare a reference to an interface?**
 
-No.
-
+Yes.
 
 **7. Can an object inherit from multiple interfaces? Can a class implement multiple interfaces? If so, how can it do so?**  
 
